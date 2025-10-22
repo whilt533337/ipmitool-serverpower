@@ -117,6 +117,7 @@ def sdr_elist_stream(ipmitool_bin, interface, host, user, pwd, net_timeout, ipmi
 
     cmd = [
         ipmitool_bin, "-I", interface, "-H", host, "-U", user, "-P", pwd,
+        "-C", "17",
         "-N", str(net_timeout), "-R", str(ipmi_retries),
         "sdr", "elist"
     ]
